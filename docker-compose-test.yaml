@@ -1,0 +1,11 @@
+services:
+  test-db:
+    container_name: TEST-PSQL
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5433:5432"

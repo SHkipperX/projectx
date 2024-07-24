@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "projectx"
+version = "0.0.1"
+description = ""
+authors = ["SHkipperX"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.111.1"}
+pytest = "^8.3.1"
+pytest-asyncio = "^0.23.8"
+sqlalchemy = "^2.0.31"
+psycopg2 = "^2.9.9"
+asyncpg = "^0.29.0"
+python-dateutil = "^2.9.0.post0"
+alembic = "^1.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

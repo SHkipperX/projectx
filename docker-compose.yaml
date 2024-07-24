@@ -1,0 +1,25 @@
+services:
+  web:
+    container_name: FastAPI
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=host.docker.internal
+    depends_on: 
+      - db
+
+  db:
+    container_name: PSQL
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=projectx
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+
+networks:
+  mynetwork:
+    driver: bridge
