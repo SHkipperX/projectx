@@ -8,12 +8,10 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /projectx
 
-#COPY requirements.txt .
-#RUN pip install --no-cache-dir -r requirements.txt
+
 COPY poetry.lock pyproject.toml /projectx/
 RUN pip install poetry
 RUN poetry install --no-root
-#RUN poetry shell
 
 COPY src/ /projectx/src/
 
